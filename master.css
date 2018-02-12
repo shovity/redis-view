@@ -8,22 +8,39 @@ body {
   font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+td, th {
+  padding: 0 5px;
+  text-align: left;
+}
+
 #container {
   position: fixed;
   top: 0;
+  left: 0;
   display: flex;
-  height: calc(100% - 30px)
+  height: calc(100% - 30px);
+  width: 100%;
 }
 
 #leftPanel {
+  overflow: auto;
   height: 100%;
-  width: 500px;
+  width: 300px;
   border-right: 1px #181a1f solid;
 }
 
 #mainPanel {
   height: 100%;
-  width: 100%;
+  flex: auto;
+}
+
+#viewer {
+  padding: 10px;
 }
 
 
@@ -34,4 +51,140 @@ body {
   height: 30px;
   width: 100%;
   border-top: 1px #181a1f solid;
+}
+
+#treeView {
+  margin: 5px 0 5px 5px;
+}
+
+#treeView ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#treeView .child {
+  display: none;
+  margin: 5px 0 5px 20px;
+}
+
+#treeView li, .header {
+  display: block;
+  position: relative;
+  padding: 0 5px;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+#treeView li span, .header span {
+  margin-bottom: -1px;
+}
+
+#treeView li:hover, .header:hover {
+  background-color: #2c313a;
+}
+
+#treeView li.focus, .header.focus {
+  background-color: #181a1f;
+}
+
+#treeView li:hover::before, .header:hover::before {
+  content: "";
+  position: absolute;
+  background-color: #2c313a;
+  width: 100vw;
+  right: 100%;
+  height: 100%;
+}
+
+#treeView li.focus::before, .header.focus::before {
+  content: "";
+  position: absolute;
+  background-color: #181a1f;
+  width: 100vw;
+  right: 100%;
+  height: 100%;
+}
+
+#folder .folder-flag {
+  display: none;
+}
+
+#folder .folder-flag:checked + .child {
+  display: block;
+}
+
+.icon {
+  display: inline-block;
+  width: 14px;
+  background-repeat: no-repeat;
+  height: 12px;
+  margin-right: 3px;
+}
+
+.icon-folder {
+  background-image: url(images/folder.png);
+}
+
+/* HEADER */
+#header {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px #181a1f solid;
+}
+
+#url {
+  flex: auto;
+  height: 30px;
+  margin: 10px;
+  background-color: #1e2127;
+  border: none;
+  border-radius: 2px;
+  color: inherit;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+#url:focus {
+  background-color: #1a1c21;
+}
+
+
+#header .btn {
+  cursor: pointer;
+  height: 30px;
+  margin: 10px;
+  margin-left: 0;
+  background-color: #1e2127;
+  border: none;
+  border-radius: 2px;
+  color: inherit;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+#header .btn:hover {
+  background-color: #1a1c21;
+}
+
+/* alert box */
+#alertBox {
+  padding: 10px;
+}
+
+#alertBox.close {
+  display: none;
+}
+
+#alertBox.danger {
+  background-color: #650d07;
+}
+
+#alertBox.primary {
+  background-color: #004882;
+}
+
+#alertBox.success {
+  background-color: #0a580d;
 }

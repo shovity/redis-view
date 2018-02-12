@@ -7,9 +7,17 @@
   </head>
   <body>
     <div id="container">
-      <div id="leftPanel"></div>
-      <div id="mainPanel"></div>
-      <div id="righPanelt"></div>
+      <div id="leftPanel">
+        <div id="treeView"></div>
+      </div>
+      <div id="mainPanel">
+        <div id="header">
+          <input id="url" value="127.0.0.1:6379/0">
+          <button class="btn" id="reload">connect</button>
+        </div>
+        <div id="alertBox"></div>
+        <div id="viewer"></div>
+      </div>
     </div>
 
     <div id="footer"></div>

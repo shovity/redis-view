@@ -1,0 +1,37 @@
+body {
+  background-color: #21252b;
+  color: #d7dae0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-size: 14px;
+  font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+}
+
+#container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  height: calc(100% - 30px)
+}
+
+#leftPanel {
+  height: 100%;
+  width: 500px;
+  border-right: 1px #181a1f solid;
+}
+
+#mainPanel {
+  height: 100%;
+  width: 100%;
+}
+
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+  border-top: 1px #181a1f solid;
+}
